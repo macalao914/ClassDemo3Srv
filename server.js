@@ -1,3 +1,4 @@
+// Express is the web framework 
 var express = require('express');
 var app = express();
 var allowCrossDomain = function(req, res, next) {
@@ -36,6 +37,17 @@ var carList = new Array(
 for (var i=0; i < carList.length;++i){
 	carList[i].id = carNextId++;
 }
+// REST Operations
+// Idea: Data is created, read, updated, or deleted through a URL that 
+// identifies the resource to be created, read, updated, or deleted.
+// The URL and any other input data is sent over standard HTTP requests.
+// Mapping of HTTP with REST 
+// a) POST - Created a new object. (Database create operation)
+// b) GET - Read an individual object, collection of object, or simple values (Database read Operation)
+// c) PUT - Update an individual object, or collection  (Database update operation)
+// d) DELETE - Remove an individual object, or collection (Database delete operation)
+
+// REST Operation - HTTP GET to read all cars
 app.get('/ClassDemo3Srv/cars', function(req, res) {
 	console.log("GET");
 	//var tom = {"make" : "Ford", "model" : "Escape", "year" : "2013", "description" : "V4 engine, 30mpg, Gray", "price" : "$18,000"};
@@ -45,6 +57,7 @@ app.get('/ClassDemo3Srv/cars', function(req, res) {
   	res.json(response);
 });
 
+// REST Operation - HTTP GET to read a car based on its id
 app.get('/ClassDemo3Srv/cars/:id', function(req, res) {
 	var id = req.params.id;
 		console.log("GET car: " + id);
@@ -73,6 +86,7 @@ app.get('/ClassDemo3Srv/cars/:id', function(req, res) {
 	}
 });
 
+// REST Operation - HTTP PUT to updated a car based on its id
 app.put('/ClassDemo3Srv/cars/:id', function(req, res) {
 	var id = req.params.id;
 		console.log("PUT car: " + id);
@@ -112,6 +126,7 @@ app.put('/ClassDemo3Srv/cars/:id', function(req, res) {
 	}
 });
 
+// REST Operation - HTTP DELETE to delete a car based on its id
 app.del('/ClassDemo3Srv/cars/:id', function(req, res) {
 	var id = req.params.id;
 		console.log("DELETE car: " + id);
@@ -140,6 +155,7 @@ app.del('/ClassDemo3Srv/cars/:id', function(req, res) {
 	}
 });
 
+// REST Operation - HTTP POST to add a new a car
 app.post('/ClassDemo3Srv/cars', function(req, res) {
 	console.log("POST");
 
@@ -157,5 +173,6 @@ app.post('/ClassDemo3Srv/cars', function(req, res) {
 });
 
 
+// Server starts running when listen is called.
 app.listen(process.env.PORT || 3412);
 console.log("server listening");
