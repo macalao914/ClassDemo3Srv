@@ -1,9 +1,17 @@
-<h1>Class Demo1</h1>
-This project shows a simple jQuery Mobile App. All the contents is static. 
-The structures of the project is: <br/>
-a) index.html - the HMTL5 file with the pages that make up the app.<br/>
-b) js - directory with the jQuery and jQuery mobile libraries.<br/>
-c) css - directory with the jQuery Mobile CSS styles.<br/>
+<h1>Class Demo3 Srv</h1>
+This project shows a simple Node.js server, using a REST API
+to serve client requests over HTTP. You will need to install 
+<a href="http://nodejs.org/">Node.js</a> in your machine to 
+run this server. The server uses the 
+<a href="http://expressjs.com">Express</a> module for Node.js.
+Express is already added the project, but for new projects you need
+to add it, following the commands shown <a href="http://expressjs.com/guide.html">here</a>.
+ 
+The structure of the project is: <br/>
+a) server.js - the server application that feeds data into ClassDemo3.<br/>
+b) car.js  - implementation of car object.<br/>
+c) package.json - configuration file for the project </br>
+d) node_modules - directory with the required Node.js modules.<br/>
 
 <h2>Editing:</h2>
 Simply import this project to an IDE, such as Aptana 3. In such case,
@@ -11,14 +19,10 @@ use the File->Import->General->Existing Projects into Workspace
 and provide the location of the directory for the project.
 
 <h2>Running:</h2>
-The project is a mobile web app, hence you need a web server to serve the files. 
-You can use Apache2 for this purpose. Check the web for instuctions on how to set it up on your platform. 
-You will need to put the project directory into the www directory 
-of the web server you are running. For example:<br/>
-a) Mac OS - /Users/username/Site (username will be your user name on the Mac.<br/>
-b) Ubuntu Linux - /var/www  (You will need to become superuser to add files)<br/>
+Node.js runs as a standalone server. From the command prompt, go to the 
+project directory  run it as follows: <br/>
 
-Once setup for running, access the project with its URL. For example:<br/>
-http://localhost/~manuel/ClassDemo1  (Mac Setup) <br/>
-<br/>
-http://localhost/ClassDemo1 (Ubuntu Linux Setup)
+> node server.js </br>
+
+The server will run on port 3412.
+
